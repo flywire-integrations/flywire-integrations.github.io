@@ -142,6 +142,8 @@
         dob = dob.replace("November", "11");
         dob = dob.replace("December", "12");
 
+        console.log('provider: ' + urlParams.get('provider'));
+        console.log('payment_destination: ' + urlParams.get('payment_destination'));
         console.log('amount: ' + urlParams.get('amount'));
         console.log('sender_email: ' + urlParams.get('sender_email'));
         console.log('sender_first_name: ' + urlParams.get('sender_first_name'));
@@ -167,7 +169,7 @@
         env: "demo",
         
         // Set your unique code (may differ between environments)
-        recipient: "GTS",
+        recipient: urlParams.get('provider'),
         
         // Set your preferred locale
         locale: "en",
