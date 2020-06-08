@@ -126,6 +126,22 @@
         </div>
         <script type="text/javascript">
         var urlParams = new URLSearchParams(window.location.search);
+
+        console.log('student_date_of_birth: ' + urlParams.get('student_date_of_birth'));
+        var dob_raw = urlParams.get('student_date_of_birth');
+        var dob = dob_raw.replace("January", "01");
+        dob = dob.replace("February", "02");
+        dob = dob.replace("March", "03");
+        dob = dob.replace("April", "04");
+        dob = dob.replace("May", "05");
+        dob = dob.replace("June", "06");
+        dob = dob.replace("July", "07");
+        dob = dob.replace("August", "08");
+        dob = dob.replace("September", "09");
+        dob = dob.replace("October", "10");
+        dob = dob.replace("November", "11");
+        dob = dob.replace("December", "12");
+
         console.log('amount: ' + urlParams.get('amount'));
         console.log('sender_email: ' + urlParams.get('sender_email'));
         console.log('sender_first_name: ' + urlParams.get('sender_first_name'));
@@ -140,7 +156,7 @@
         console.log('student_id: ' + urlParams.get('student_id'));
         console.log('student_first_name: ' + urlParams.get('student_first_name'));
         console.log('student_last_name: ' + urlParams.get('student_last_name'));
-        console.log('student_date_of_birth: ' + urlParams.get('student_date_of_birth'));
+        console.log('student_date_of_birth: ' + dob);
         console.log('student_email: ' + urlParams.get('student_email'));
         console.log('callback_url: ' + urlParams.get('callback_url'));
         console.log('callback_id: ' + urlParams.get('callback_id'));
