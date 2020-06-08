@@ -1,193 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>Page Title</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://payment.flywire.com/assets/js/checkout.js"></script>
-<style>
-* {
-  box-sizing: border-box;
-}
-
-/* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-/* Header/logo Title */
-.header {
-  padding: 80px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-}
-
-/* Increase the font size of the heading */
-.header h1 {
-  font-size: 40px;
-}
-
-/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-}
-
-/* Style the navigation bar links */
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-
-
-/* Right-aligned link */
-.navbar a.right {
-  float: right;
-}
-
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Active/current link */
-.navbar a.active {
-  background-color: #666;
-  color: white;
-}
-
-/* Column container */
-.row {  
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-}
-
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
-
-/* Main column */
-.main {   
-  -ms-flex: 70%; /* IE10 */
-  flex: 70%;
-  background-color: white;
-  padding: 20px;
-}
-
-/* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
-
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-}
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-}
-</style>
-</head>
-<body>
-
-<div class="header">
-  <h1>GT School</h1>
-  <p>We offer MBA and EMBA courses</p>
-</div>
-
-<div class="navbar">
-  <a href="#" class="active">Home</a>
-  <a href="application">Application</a>
-</div>
-
-<div class="row">
-  <div class="main">
-    <h2>Thank you for applying</h2>
-    <button id="checkout-button">Pay with Flywire</button>
-    <br>
-  </div>
-</div>
-
-<div class="footer">
-  <h2>Footer</h2>
-</div>
-
-<script>
-     var config = {
-       // See sample configuration details in section below
-       // Set your environment (demo, production)
-       env: "demo",
- 
-       // Set your unique code (may differ between environments)
-       recipient: "GTS",
- 
-       // Set your preferred locale
-       locale: "en",
-
-       // Set provider to checkout_edu
-       provider: "checkout_edu",
- 
-       // Pre-populate fields with data (based on your portal settings)
-       amount: 70000,
-       sender_country: 'CN',
-       sender_first_name: "John",
-       sender_middle_name: "Smith",
-       sender_last_name: "Doe",
-       sender_address1: "1 First St",
-       sender_address2: "202",
-       sender_state: "Spitalfields",
-       sender_zip_code: "E1 6GL",
-       sender_phone: "+441234567890",
-       sender_city: "London",
-       sender_email: "guoting.foo@flywire.com",
-       student_id: "123456",
-       student_first_name: "John",
- 
-       // Enable payment status notification callbacks
-       callback_id: "REF-2332",
-       callback_url: "https://hook.integromat.com/3nofk17o6bhbbocph5aux1uhsqbx6cf9",
- 
-       // Set the return url to redirect the user on process completion
-       return_url: "https://google.com",
-     };
-
- 
-     // Render the payment form when clicking on the button element
-     window.flywire.Checkout.render(config, "#checkout-button");
-   </script>
-
-</body>
+    <head>
+        <title>Page Title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://payment.flywire.com/assets/js/checkout.js"></script>
+        <style>
+        * {
+        box-sizing: border-box;
+        }
+        /* Style the body */
+        body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        }
+        /* Header/logo Title */
+        .header {
+        padding: 80px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        }
+        /* Increase the font size of the heading */
+        .header h1 {
+        font-size: 40px;
+        }
+        /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+        .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        }
+        /* Style the navigation bar links */
+        .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        }
+        /* Right-aligned link */
+        .navbar a.right {
+        float: right;
+        }
+        /* Change color on hover */
+        .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+        }
+        /* Active/current link */
+        .navbar a.active {
+        background-color: #666;
+        color: white;
+        }
+        /* Column container */
+        .row {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap; /* IE10 */
+        flex-wrap: wrap;
+        }
+        /* Create two unequal columns that sits next to each other */
+        /* Sidebar/left column */
+        .side {
+        -ms-flex: 30%; /* IE10 */
+        flex: 30%;
+        background-color: #f1f1f1;
+        padding: 20px;
+        }
+        /* Main column */
+        .main {
+        -ms-flex: 70%; /* IE10 */
+        flex: 70%;
+        background-color: white;
+        padding: 20px;
+        }
+        /* Fake image, just for this example */
+        .fakeimg {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+        }
+        /* Footer */
+        .footer {
+        padding: 20px;
+        text-align: center;
+        background: #ddd;
+        }
+        /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 700px) {
+        .row {
+        flex-direction: column;
+        }
+        }
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+        @media screen and (max-width: 400px) {
+        .navbar a {
+        float: none;
+        width: 100%;
+        }
+        }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>GT School</h1>
+            <p>We offer MBA and EMBA courses</p>
+        </div>
+        <div class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="application.html">Application</a>
+        </div>
+        <div class="row">
+            <div class="main">
+                <h2>Thank you for applying</h2>
+                <button id="checkout-button">Pay with Flywire</button>
+                <br>
+            </div>
+        </div>
+        <div class="footer">
+            <h2>Footer</h2>
+        </div>
+        <script type="text/javascript">
+        var urlParams = new URLSearchParams(window.location.search);
+        console.log(urlParams.get('amount'));
+        console.log(urlParams.get('sender_email'));
+        console.log(urlParams.get('sender_first_name'));
+        console.log(urlParams.get('sender_middle_name'));
+        console.log(urlParams.get('sender_last_name'));
+        console.log(urlParams.get('sender_address1'));
+        console.log(urlParams.get('sender_address2'));
+        console.log(urlParams.get('sender_state'));
+        console.log(urlParams.get('sender_city'));
+        console.log(urlParams.get('sender_zip'));
+        console.log(urlParams.get('sender_phone'));
+        console.log(urlParams.get('student_id'));
+        console.log(urlParams.get('student_first_name'));
+        console.log(urlParams.get('student_last_name'));
+        console.log(urlParams.get('student_date_of_birth'));
+        console.log(urlParams.get('student_email'));
+        console.log(urlParams.get('callback_url'));
+        console.log(urlParams.get('callback_id'));
+        </script>
+        <script>
+        var config = {
+        // See sample configuration details in section below
+        // Set your environment (demo, production)
+        env: "demo",
+        
+        // Set your unique code (may differ between environments)
+        recipient: "GTS",
+        
+        // Set your preferred locale
+        locale: "en",
+        // Set provider to checkout_edu
+        provider: "checkout_edu",
+        
+        // Pre-populate fields with data (based on your portal settings)
+        amount: 70000,
+        sender_country: 'CN',
+        sender_first_name: "John",
+        sender_middle_name: "Smith",
+        sender_last_name: "Doe",
+        sender_address1: "1 First St",
+        sender_address2: "202",
+        sender_state: "Spitalfields",
+        sender_zip_code: "E1 6GL",
+        sender_phone: "+441234567890",
+        sender_city: "London",
+        sender_email: "guoting.foo@flywire.com",
+        student_id: "123456",
+        student_first_name: "John",
+        
+        // Enable payment status notification callbacks
+        callback_id: "REF-2332",
+        callback_url: "https://hook.integromat.com/3nofk17o6bhbbocph5aux1uhsqbx6cf9",
+        
+        // Set the return url to redirect the user on process completion
+        return_url: "https://google.com",
+        };
+        
+        // Render the payment form when clicking on the button element
+        window.flywire.Checkout.render(config, "#checkout-button");
+        </script>
+    </body>
 </html>
