@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://payment.flywire.com/assets/js/checkout.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>GT School</h1>
+      <p>We offer MBA and EMBA courses</p>
+    </div>
+    <div class="navbar">
+      <a href="index.html" class="active">Home</a>
+      <a href="application_redirect.html">Application Redirect</a>
+      <a href="application_embed.html">Application Embed</a>
+      <a href="application_embed_2.html">Application Embed 2.0</a>
+      <a href="invoices_redirect.html">Invoices Redirect</a>
+      <a href="invoices_embed.html">Invoices Embed</a>
+      <a href="invoices_embed_2.html">Invoices Embed 2.0</a>
+    </div>
+    <div class="row">
+      <div class="main">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRFyspj2ctAVpXUi3i0bgrChl70BkUzxAMYL-3K1GKCuQ0buak0_bvn_R_bzYT8esRpKRG46yUO7L6_/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;headers=false" width="320" height="250"></iframe>
+        <br>
+        <button id="checkout-button">Pay with Flywire</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="main">
+        <a href="invoices_paid.html"><button type="button">Refresh to check status</button></a>
+      </div>
+    </div>
+    <div class="footer">
+      <h2>Bugis Junctions, Victoria Street, Singapore</h2>
+    </div>
+    <script>
+    var config = {
+    // See sample configuration details in section below
+    // Set your environment (demo, production)
+    env: "demo",
+    
+    // Set your unique code (may differ between environments)
+    recipient: "GTS",
+    
+    // Set your preferred locale
+    locale: "en",
+    // Set provider to checkout_edu
+    provider: "checkout_edu",
+    
+    // Pre-populate fields with data (based on your portal settings)
+    amount: 250000,
+    sender_country: 'SG',
+    sender_first_name: "John",
+    sender_middle_name: "",
+    sender_last_name: "Smith",
+    sender_address1: "Victoria Street",
+    sender_address2: "Bugis Junctions",
+    sender_state: "Singapore",
+    sender_zip_code: "123456",
+    sender_phone: "+6512345678",
+    sender_city: "Singapore",
+    sender_email: "johnsmith@gtschool.com",
+    student_email: "johnsmith@gtschool.com",
+    student_id: "A123456700",
+    student_first_name: "John",
+    student_last_name: "Smith",
+    
+    // Set the return url to redirect the user on process completion
+    return_url: "https://gtfoo-flywire.github.io/payment_complete.html",
+    };
+    
+    // Render the payment form when clicking on the button element
+    window.flywire.Checkout.render(config, "#checkout-button");
+    </script>
+  </body>
+</html>

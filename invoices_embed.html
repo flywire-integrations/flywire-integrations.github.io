@@ -4,6 +4,7 @@
     <title>Page Title</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://payment.flywire.com/assets/js/flywire.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
@@ -19,11 +20,12 @@
       <a href="invoices_redirect.html">Invoices Redirect</a>
       <a href="invoices_embed.html">Invoices Embed</a>
       <a href="invoices_embed_2.html">Invoices Embed 2.0</a>
-      <a href="admin.html">Admin Dashboard</a>
     </div>
     <div class="row">
       <div class="main">
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRFyspj2ctAVpXUi3i0bgrChl70BkUzxAMYL-3K1GKCuQ0buak0_bvn_R_bzYT8esRpKRG46yUO7L6_/pubhtml?gid=1282661360&amp;single=true&amp;widget=false&amp;headers=false" width="320" height="250"></iframe>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRFyspj2ctAVpXUi3i0bgrChl70BkUzxAMYL-3K1GKCuQ0buak0_bvn_R_bzYT8esRpKRG46yUO7L6_/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;headers=false" width="320" height="250"></iframe>
+        <br>
+        <div id="flywire-payex"></div>
       </div>
     </div>
     <div class="row">
@@ -34,5 +36,30 @@
     <div class="footer">
       <h2>Bugis Junctions, Victoria Street, Singapore</h2>
     </div>
+    <script>
+    window.flywire.Payment.render({
+    // Set your environment
+    // demo, production
+    env: "demo",
+    // Set your preferred locale
+    // en, es-ES, zh-CN, ko, fr-FR, ja, pt-PT, ar, id
+    locale: "en",
+    // Set your institution unique Code
+    destination: "GTS",
+    theme: {
+    brandColor: "#3498db", // Any CSS color
+    chat: true, // true, false
+    footer: false, // true, false
+    skipCompletedSteps: true // true, false
+    },
+    provider: "embed",
+    amount: 250000,
+    student_email: "johnsmith@gtschool.com",
+    student_id: "A123456700",
+    student_first_name: "John",
+    student_last_name: "Smith",
+    read_only: "student_id, student_first_name, student_last_name,student_email, amount"
+    }, "#flywire-payex");
+    </script>
   </body>
 </html>

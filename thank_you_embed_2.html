@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://payment.flywire.com/assets/js/checkout.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>GT School</h1>
+      <p>We offer MBA and EMBA courses</p>
+    </div>
+    <div class="navbar">
+      <a href="index.html" class="active">Home</a>
+      <a href="application_redirect.html">Application Redirect</a>
+      <a href="application_embed.html">Application Embed</a>
+      <a href="application_embed_2.html">Application Embed 2.0</a>
+      <a href="invoices_redirect.html">Invoices Redirect</a>
+      <a href="invoices_embed.html">Invoices Embed</a>
+      <a href="invoices_embed_2.html">Invoices Embed 2.0</a>
+    </div>
+    <div class="row">
+      <div class="main">
+        <h2>Thank you for applying</h2>
+        <button id="checkout-button">Pay with Flywire</button>
+        <br>
+      </div>
+    </div>
+    <div class="footer">
+      <h2>Bugis Junctions, Victoria Street, Singapore</h2>
+    </div>
+    <script type="text/javascript">
+    var urlParams = new URLSearchParams(window.location.search);
+    console.log('student_date_of_birth: ' + urlParams.get('student_date_of_birth'));
+    var dob_raw = urlParams.get('student_date_of_birth');
+    var dob = dob_raw.replace("January", "01");
+    dob = dob.replace("February", "02");
+    dob = dob.replace("March", "03");
+    dob = dob.replace("April", "04");
+    dob = dob.replace("May", "05");
+    dob = dob.replace("June", "06");
+    dob = dob.replace("July", "07");
+    dob = dob.replace("August", "08");
+    dob = dob.replace("September", "09");
+    dob = dob.replace("October", "10");
+    dob = dob.replace("November", "11");
+    dob = dob.replace("December", "12");
+    console.log('provider: ' + urlParams.get('provider'));
+    console.log('payment_destination: ' + urlParams.get('payment_destination'));
+    console.log('amount: ' + urlParams.get('amount'));
+    console.log('sender_email: ' + urlParams.get('sender_email'));
+    console.log('sender_first_name: ' + urlParams.get('sender_first_name'));
+    console.log('sender_middle_name: ' + urlParams.get('sender_middle_name'));
+    console.log('sender_last_name: ' + urlParams.get('sender_last_name'));
+    console.log('sender_address1: ' + urlParams.get('sender_address1'));
+    console.log('sender_address2: ' + urlParams.get('sender_address2'));
+    console.log('sender_state: ' + urlParams.get('sender_state'));
+    console.log('sender_city: ' + urlParams.get('sender_city'));
+    console.log('sender_zip: ' + urlParams.get('sender_zip'));
+    console.log('sender_phone: ' + urlParams.get('sender_phone'));
+    console.log('student_id: ' + urlParams.get('student_id'));
+    console.log('student_first_name: ' + urlParams.get('student_first_name'));
+    console.log('student_last_name: ' + urlParams.get('student_last_name'));
+    console.log('student_date_of_birth: ' + dob);
+    console.log('student_email: ' + urlParams.get('student_email'));
+    console.log('callback_url: ' + urlParams.get('callback_url'));
+    console.log('callback_id: ' + urlParams.get('callback_id'));
+    
+    var config = {
+    // See sample configuration details in section below
+    // Set your environment (demo, production)
+    env: "demo",
+    
+    // Set your unique code (may differ between environments)
+    recipient: urlParams.get('provider'),
+    
+    // Set your preferred locale
+    locale: "en",
+    // Set provider to checkout_edu
+    provider: "checkout_edu",
+    
+    // Pre-populate fields with data (based on your portal settings)
+    amount: urlParams.get('amount'),
+    sender_country: 'SG',
+    sender_first_name: urlParams.get('sender_first_name'),
+    sender_middle_name: urlParams.get('sender_middle_name'),
+    sender_last_name: urlParams.get('sender_last_name'),
+    sender_address1: urlParams.get('sender_address1'),
+    sender_address2: urlParams.get('sender_address2'),
+    sender_state: urlParams.get('sender_state'),
+    sender_zip_code: urlParams.get('sender_zip'),
+    sender_phone: urlParams.get('sender_phone'),
+    sender_city: urlParams.get('sender_city'),
+    sender_email: urlParams.get('student_email'),
+    student_email: urlParams.get('student_email'),
+    student_id: urlParams.get('student_id'),
+    student_first_name: urlParams.get('sender_first_name'),
+    student_last_name: urlParams.get('sender_last_name'),
+    
+    // Enable payment status notification callbacks
+    callback_id: urlParams.get('callback_id'),
+    callback_url: urlParams.get('callback_url'),
+    
+    // Set the return url to redirect the user on process completion
+    return_url: "https://gtfoo-flywire.github.io/payment_complete.html",
+    };
+    
+    // Render the payment form when clicking on the button element
+    window.flywire.Checkout.render(config, "#checkout-button");
+    </script>
+  </body>
+</html>
