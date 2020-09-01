@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="https://payment.flywire.com/assets/js/flywire.js"></script>
+    <script src="https://payment.flywire.com/assets/js/checkout.js"></script>
   </head>
   <body>
     <header id="header">
@@ -64,7 +64,7 @@
           <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
               <h1 class="text-white">
-              View Balance and Pay - John Smith
+              Payment Status
               </h1>
             </div>
           </div>
@@ -77,42 +77,7 @@
           <div class="row d-flex justify-content-center">
             <div class="menu-content pb-70 col-lg-8">
               <div class="title text-center">
-                <div class="progress-table-wrap">
-                  <div class="progress-table">
-                    <div class="table-row">
-                      <div class="serial"><b>Name</b></div>
-                      <div class="country">John Smith</div>
-                    </div>
-                    <div class="table-row">
-                      <div class="serial"><b>Student ID</b></div>
-                      <div class="country">A123456700</div>
-                    </div>
-                    <div class="table-row">
-                      <div class="serial"><b>Invoice No</b></div>
-                      <div class="country">FC-10005001</div>
-                    </div>
-                    <div class="table-row">
-                      <div class="serial"><b>Payment For</b></div>
-                      <div class="country">Winter 2020 tuition</div>
-                    </div>
-                    <div class="table-row">
-                      <div class="serial"><b>Amount Due</b></div>
-                      <div class="country">$2,500</div>
-                    </div>
-                    <div class="table-row">
-                      <div class="serial"><b>Payment status</b></div>
-                      <div class="country" style="color:red;font-weight: bold;">Unpaid</div>
-                    </div>
-                  </div>
-                </div>
-                <br>
-                <div id="flywire-payex"></div>
-                <br>
-                <div class="title text-center">
-                  <div class="main">
-                    <a href="invoices_paid.html" class="genric-btn info">Refresh to check status</a>
-                  </div>
-                </div>
+                <h1 class="mb-10" id="payment_status"></h1>
               </div>
             </div>
           </div>
@@ -171,29 +136,18 @@
       </footer>
       <!-- End footer Area -->
       <script>
-      window.flywire.Payment.render({
-      // Set your environment
-      // demo, production
-      env: "demo",
-      // Set your preferred locale
-      // en, es-ES, zh-CN, ko, fr-FR, ja, pt-PT, ar, id
-      locale: "en",
-      // Set your institution unique Code
-      destination: "FCL",
-      theme: {
-      brandColor: "#3498db", // Any CSS color
-      chat: true, // true, false
-      footer: false, // true, false
-      skipCompletedSteps: true // true, false
-      },
-      provider: "embed",
-      amount: 250000,
-      student_email: "johnsmith@flywire.com",
-      student_id: "A123456700",
-      student_first_name: "John",
-      student_last_name: "Smith",
-      read_only: "student_id, student_first_name, student_last_name,student_email, amount"
-      }, "#flywire-payex");
+      $(function(){
+      $("#nav-menu-update").load("nav.html");
+      });
+      </script>
+      <script type="text/javascript">
+      var urlParams = new URLSearchParams(window.location.search);
+      var reference = urlParams.get('reference');
+      var status = urlParams.get('status');
+      console.log('reference: ' + reference);
+      console.log('status: ' + status);
+
+      document.getElementById("payment_status").innerHTML = "Thank you for using Flywire, your Flywire reference ID is <b>" + reference + "</b>.<br>Your current payment status is <b>" + status +"</b>";
       </script>
       <script src="js/vendor/jquery-2.2.4.min.js"></script>
       <script src="js/popper.min.js"></script>
