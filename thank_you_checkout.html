@@ -138,11 +138,6 @@
         </div>
       </footer>
       <!-- End footer Area -->
-      <script>
-      $(function(){
-      $("#nav-menu-update").load("nav.html");
-      });
-      </script>
       <script type="text/javascript">
       var payment_destination = "flywire-college";
       var provider = "FCL";
@@ -378,6 +373,7 @@
       country = country.replace('Yemen', 'YE');
       country = country.replace('Zambia', 'ZM');
       country = country.replace('Zimbabwe', 'ZW');
+      console.log('country: ' + country);
       console.log('provider: ' + provider);
       console.log('payment_destination: ' + payment_destination);
       console.log('amount: ' + urlParams.get('amount'));
@@ -408,7 +404,8 @@
       provider: "checkout_edu",
       
       // Pre-populate fields with data (based on your portal settings)
-      amount: urlParams.get('amount'),
+
+      amount: urlParams.get('amount') * 100,
       sender_country: country,
       sender_first_name: urlParams.get('first_name'),
       sender_last_name: urlParams.get('last_name'),
