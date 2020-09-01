@@ -1,0 +1,6 @@
+"Initiated Time","Guaranteed Time","Delivered Time","Payment ID","Payment Status","Student ID","First Name","Last Name","Email","Amount","Currency"
+"2020-09-01 12:18","","","GTS582798893","initiated","A123456700","JOHN","SMITH","john.smith@flywire.com","3000","USD"
+"2020-09-01 11:48","2020-09-01 11:48","","GTS338636845","guaranteed","A111222200","JANE","DOE","jane.doe@flywire.com","2500","USD"
+"2020-03-21 18:24","2020-03-21 18:25","2020-06-08 18:11","GTS224569823","delivered","A222444400","PETER","LEE","peter.lee@flywire.com","1500","SGD"
+"2020-03-21 18:24","","","GTS301571869","on_hold","B112223300","KENNY","TAN","kenny.tan@flywire.com","1500","SGD"
+"2020-03-20 18:49","","","GTS880358521","cancelled","B222441100","DAVID","JACKSON","david.jackson@flywire.com","300","SGD"
