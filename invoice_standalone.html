@@ -25,7 +25,6 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="https://payment.flywire.com/assets/js/flywire.js"></script>
   </head>
   <body>
     <header id="header">
@@ -108,12 +107,12 @@
                   </div>
                 </div>
                 <br>
-                <div id="flywire-payex"></div>
-                <br>
-                <div class="title text-center">
-                  <div class="main">
-                    <a href="invoices_paid.html" class="genric-btn info">Refresh to check status</a>
-                  </div>
+                <p>You can proceed to make payment at <a href="https://flywire-college.demo.flywire.com" target="_blank">https://flywire-college.demo.flywire.com</a></p>
+              </div>
+              <br>
+              <div class="title text-center">
+                <div class="main">
+                  <a href="invoices_paid.html" class="genric-btn info">Refresh to check status</a>
                 </div>
               </div>
             </div>
@@ -172,31 +171,6 @@
         </div>
       </footer>
       <!-- End footer Area -->
-      <script>
-      window.flywire.Payment.render({
-      // Set your environment
-      // demo, production
-      env: "demo",
-      // Set your preferred locale
-      // en, es-ES, zh-CN, ko, fr-FR, ja, pt-PT, ar, id
-      locale: "en",
-      // Set your institution unique Code
-      destination: "FCL",
-      theme: {
-      brandColor: "#3498db", // Any CSS color
-      chat: true, // true, false
-      footer: false, // true, false
-      skipCompletedSteps: true // true, false
-      },
-      provider: "embed",
-      amount: 250000,
-      student_email: "johnsmith@flywire.com",
-      student_id: "A123456700",
-      student_first_name: "John",
-      student_last_name: "Smith",
-      read_only: "student_id, student_first_name, student_last_name,student_email, amount"
-      }, "#flywire-payex");
-      </script>
       <script src="js/vendor/jquery-2.2.4.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/vendor/bootstrap.min.js"></script>
