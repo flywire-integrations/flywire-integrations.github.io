@@ -179,34 +179,33 @@
         env: "demo",
 
         // Set your unique code (may differ between environments)
-        recipientCode: "GTS",
+        recipientCode: "FCL",
 
         // Set your preferred locale
         locale: "en",
 
         // Pass in required information
         amount: 1000,
-        country: "GB",
 
         // Display the payer information input fields (true, false)
         requestPayerInfo: false,
 
         // Pass in payer information (all required if
         // requestPayerInfo set to false)
-        sender_email: "sender@test.com",
-        sender_first_name: "John",
-        sender_middle_name: "Doe",
-        sender_last_name: "Tan",
-        sender_address1: "Bugis Junction Towers",
-        sender_address2: "Victoria Street",
-        sender_state: "Singapore",
-        sender_city: "Singapore",
-        sender_zip: "123456",
-        sender_phone: "99001122",
+        firstName: "Guo Ting",
+        lastName: "Ting",
+        email: "guoting.foo@flywire.com",
+        phone: "+6512345678",
+        address: "Bugis Junction",
+        city: "Singapore",
+        country: "SG",
 
         // Pass in custom information (based on your portal settings)
         recipientFields: {
-          bookingReference: 'REF1234'
+          student_email: "johnsmith@flywire.com",
+          student_id: "A123456700",
+          student_first_name: "John",
+          student_last_name: "Smith"
         },
 
         // Set the return URL where payers are redirected to on completion
