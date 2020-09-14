@@ -173,17 +173,18 @@
     </div>
   </footer>
   <!-- End footer Area -->
+  <script src="js/flywire_parameters.js"></script>
   <script>
   var config = {
     // See sample configuration details in section below
     // Set your environment (demo, production)
-    env: "demo",
+    env: env,
 
     // Set your unique code (may differ between environments)
-    recipient: "FCL",
+    recipient: portal_code,
 
     // Set your preferred locale
-    locale: "en",
+    locale: locale,
     // Set provider to checkout_edu
     provider: "checkout_edu",
 
@@ -206,7 +207,7 @@
     student_last_name: "Smith",
 
     // Set the return url to redirect the user on process completion
-    return_url: "https://flywire-integrations.github.io/invoices_paid.html",
+    return_url: return_url,
   };
 
   // Render the payment form when clicking on the button element

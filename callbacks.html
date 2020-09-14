@@ -156,12 +156,13 @@
     </div>
   </footer>
   <!-- End footer Area -->
+  <script src="js/flywire_parameters.js"></script>
   <script>
   var today = new Date();
   var date = today.getUTCFullYear() + '-' + ("0" + (today.getUTCMonth() + 1)).slice(-2) + '-' + ("0" + today.getUTCDate()).slice(-2);
   var time = ("0" + (today.getUTCHours() + 1)).slice(-2) + ":" + ("0" + (today.getUTCMinutes() + 1)).slice(-2) + ":" + ("0" + (today.getUTCSeconds() + 1)).slice(-2);
   var dateTime = date + ' ' + time + ' UTC';
-  document.getElementById("first_callback").innerHTML = '{<br>&nbsp;&nbsp;"id": "ABC123456789",<br>&nbsp;&nbsp;"amount": "290.00",<br>&nbsp;&nbsp;"status": "<b>initiated</b>",<br>&nbsp;&nbsp;"at": "' + dateTime + '",<br>&nbsp;&nbsp;"callback_id": "FC-10005001"<br>}';
+  document.getElementById("first_callback").innerHTML = '{<br>&nbsp;&nbsp;"id": "FCL123456789",<br>&nbsp;&nbsp;"amount": "290.00",<br>&nbsp;&nbsp;"status": "<b>initiated</b>",<br>&nbsp;&nbsp;"at": "' + dateTime + '",<br>&nbsp;&nbsp;"callback_id": "FC-10005001"<br>}';
   </script>
   <script>
   function get_guaranteed_callback() {
@@ -169,7 +170,7 @@
     var date = today.getUTCFullYear() + '-' + ("0" + (today.getUTCMonth() + 1)).slice(-2) + '-' + ("0" + today.getUTCDate()).slice(-2);
     var time = ("0" + (today.getUTCHours() + 1)).slice(-2) + ":" + ("0" + (today.getUTCMinutes() + 1)).slice(-2) + ":" + ("0" + (today.getUTCSeconds() + 1)).slice(-2);
     var dateTime = date + ' ' + time + ' UTC';
-    document.getElementById("second_callback").innerHTML = '{<br>&nbsp;&nbsp;"id": "ABC123456789",<br>&nbsp;&nbsp;"amount": "290.00",<br>&nbsp;&nbsp;"status": "<b>guaranteed</b>",<br>&nbsp;&nbsp;"at": "' + dateTime + '",<br>&nbsp;&nbsp;"callback_id": "FC-10005001"<br>}';
+    document.getElementById("second_callback").innerHTML = '{<br>&nbsp;&nbsp;"id": "FCL123456789",<br>&nbsp;&nbsp;"amount": "290.00",<br>&nbsp;&nbsp;"status": "<b>guaranteed</b>",<br>&nbsp;&nbsp;"at": "' + dateTime + '",<br>&nbsp;&nbsp;"callback_id": "FC-10005001"<br>}';
     document.getElementById("final_callback").innerHTML = '<button class="genric-btn info" onclick="get_delivered_callback()">Flywire has disbursed the payment.</button>';
   }
 
@@ -178,7 +179,7 @@
     var date = today.getUTCFullYear() + '-' + ("0" + (today.getUTCMonth() + 1)).slice(-2) + '-' + ("0" + today.getUTCDate()).slice(-2);
     var time = ("0" + (today.getUTCHours() + 1)).slice(-2) + ":" + ("0" + (today.getUTCMinutes() + 1)).slice(-2) + ":" + ("0" + (today.getUTCSeconds() + 1)).slice(-2);
     var dateTime = date + ' ' + time + ' UTC';
-    document.getElementById("final_callback").innerHTML = '{<br>&nbsp;&nbsp;"id": "ABC123456789",<br>&nbsp;&nbsp;"amount": "290.00",<br>&nbsp;&nbsp;"status": "<b>delivered</b>",<br>&nbsp;&nbsp;"at": "' + dateTime + '",<br>&nbsp;&nbsp;"callback_id": "FC-10005001"<br>}';
+    document.getElementById("final_callback").innerHTML = '{<br>&nbsp;&nbsp;"id": "FCL123456789",<br>&nbsp;&nbsp;"amount": "290.00",<br>&nbsp;&nbsp;"status": "<b>delivered</b>",<br>&nbsp;&nbsp;"at": "' + dateTime + '",<br>&nbsp;&nbsp;"callback_id": "FC-10005001"<br>}';
   }
 
   function get_cancelled_callback() {
@@ -186,7 +187,7 @@
     var date = today.getUTCFullYear() + '-' + ("0" + (today.getUTCMonth() + 1)).slice(-2) + '-' + ("0" + today.getUTCDate()).slice(-2);
     var time = ("0" + (today.getUTCHours() + 1)).slice(-2) + ":" + ("0" + (today.getUTCMinutes() + 1)).slice(-2) + ":" + ("0" + (today.getUTCSeconds() + 1)).slice(-2);
     var dateTime = date + ' ' + time + ' UTC';
-    document.getElementById("second_callback").innerHTML = '{<br>&nbsp;&nbsp;"id": "ABC123456789",<br>&nbsp;&nbsp;"amount": "290.00",<br>&nbsp;&nbsp;"status": "<b>cancelled</b>",<br>&nbsp;&nbsp;"at": "' + dateTime + '",<br>&nbsp;&nbsp;"callback_id": "FC-10005001"<br>}';
+    document.getElementById("second_callback").innerHTML = '{<br>&nbsp;&nbsp;"id": "FCL123456789",<br>&nbsp;&nbsp;"amount": "290.00",<br>&nbsp;&nbsp;"status": "<b>cancelled</b>",<br>&nbsp;&nbsp;"at": "' + dateTime + '",<br>&nbsp;&nbsp;"callback_id": "FC-10005001"<br>}';
     document.getElementById("final_callback").innerHTML = '';
   }
   </script>
