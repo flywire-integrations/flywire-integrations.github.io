@@ -168,6 +168,7 @@
     </div>
   </footer>
   <!-- End footer Area -->
+  <script src="js/flywire_parameters.js"></script>
   <script>
   document
     .querySelector("#pay")
@@ -176,13 +177,13 @@
 
       var config = {
         // Set the target environment (demo, prod)
-        env: "demo",
+        env: env,
 
         // Set your unique code (may differ between environments)
-        recipientCode: "FCL",
+        recipientCode: portal_code,
 
         // Set your preferred locale
-        locale: "en",
+        locale: locale,
 
         // Pass in required information
         amount: 1000,
@@ -209,10 +210,10 @@
         },
 
         // Set the return URL where payers are redirected to on completion
-        returnUrl: "https://httpbin.org/get",
+        returnUrl: return_url,
 
         // Enable payment status notification callbacks
-        callbackUrl: "https://api.yourdomain.com/flywire-notifications",
+        callbackUrl: callback_url,
         callbackId: "BKG12345-PMT54321",
 
         onInvalidInput: function(errors) {

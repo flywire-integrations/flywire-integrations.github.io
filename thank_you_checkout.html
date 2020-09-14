@@ -145,10 +145,8 @@
     </div>
   </footer>
   <!-- End footer Area -->
+  <script src="js/flywire_parameters.js"></script>
   <script type="text/javascript">
-  var payment_destination = "flywire-college";
-  var provider = "FCL";
-  var callback_url = "https://hook.integromat.com/3nofk17o6bhbbocph5aux1uhsqbx6cf9"
   var urlParams = new URLSearchParams(window.location.search);
   console.log('country: ' + urlParams.get('country'));
   var country = urlParams.get('country');
@@ -381,7 +379,7 @@
   country = country.replace('Zambia', 'ZM');
   country = country.replace('Zimbabwe', 'ZW');
   console.log('country: ' + country);
-  console.log('provider: ' + provider);
+  console.log('provider: ' + portal_code);
   console.log('payment_destination: ' + payment_destination);
   console.log('amount: ' + urlParams.get('amount'));
   console.log('sender_email: ' + urlParams.get('email'));
@@ -400,13 +398,13 @@
   var config = {
     // See sample configuration details in section below
     // Set your environment (demo, production)
-    env: "demo",
+    env: env,
 
     // Set your unique code (may differ between environments)
-    recipient: provider,
+    recipient: portal_code,
 
     // Set your preferred locale
-    locale: "en",
+    locale: locale,
     // Set provider to checkout_edu
     provider: "checkout_edu",
 

@@ -179,23 +179,17 @@
     </div>
   </footer>
   <!-- End footer Area -->
-  <script>
-  var amount = 250000;
-  var student_first_name = "John";
-  var student_last_name = "Smith";
-  var student_email: "johnsmith@flywire.com";
-  var student_id = "A123456700";
-  </script>
+  <script src="js/flywire_parameters.js"></script>
   <script>
   window.flywire.Payment.render({
     // Set your environment
     // demo, production
-    env: "demo",
+    env: env,
     // Set your preferred locale
     // en, es-ES, zh-CN, ko, fr-FR, ja, pt-PT, ar, id
-    locale: "en",
+    locale: locale,
     // Set your institution unique Code
-    destination: "FCL",
+    destination: portal_code,
     theme: {
       brandColor: "#3498db", // Any CSS color
       chat: true, // true, false
@@ -203,7 +197,7 @@
       skipCompletedSteps: true // true, false
     },
     provider: "embed",
-    amount: 250000,
+    amount: "250000",
     student_email: "johnsmith@flywire.com",
     student_id: "A123456700",
     student_first_name: "John",
