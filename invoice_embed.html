@@ -108,8 +108,13 @@
                   <div class="country" id="amount"></div>
                 </div>
                 <div class="table-row">
-                  <div class="serial"><b>Payment status</b></div>
+                  <div class="serial"><b>Payment Status</b></div>
                   <div class="country" id="payment_status" style="color:red; font-weight:bold;">Unpaid</div>
+                </div>
+                <div class="table-row">
+                  <div class="serial"><b>Locked Amount</b></div>
+                  <input type="checkbox" id="primary-checkbox" checked onchange='handleChange(this);'>
+                  <label for="primary-checkbox"></label>
                 </div>
               </div>
             </div>
@@ -189,29 +194,84 @@
   if (typeof(payment_status) == "string") {
     document.getElementById("payment_status").innerHTML = payment_status;
   }
+
   window.flywire.Payment.render({
-    // Set your environment
-    // demo, production
-    env: env,
-    // Set your preferred locale
-    // en, es-ES, zh-CN, ko, fr-FR, ja, pt-PT, ar, id
-    locale: locale,
-    // Set your institution unique Code
-    destination: portal_code,
-    theme: {
-      brandColor: "#3498db", // Any CSS color
-      chat: true, // true, false
-      footer: false, // true, false
-      skipCompletedSteps: true // true, false
-    },
-    provider: "embed",
-    amount: amount * 100,
-    student_email: student_email,
-    student_id: student_id,
-    student_first_name: student_first_name,
-    student_last_name: student_last_name,
-    read_only: "student_id, student_first_name, student_last_name,student_email, amount"
-  }, "#flywire-payex");
+        // Set your environment
+        // demo, production
+        env: env,
+        // Set your preferred locale
+        // en, es-ES, zh-CN, ko, fr-FR, ja, pt-PT, ar, id
+        locale: locale,
+        // Set your institution unique Code
+        destination: portal_code,
+        theme: {
+          brandColor: "#3498db", // Any CSS color
+          chat: true, // true, false
+          footer: false, // true, false
+          skipCompletedSteps: true // true, false
+        },
+        provider: "embed",
+        amount: amount * 100,
+        student_email: student_email,
+        student_id: student_id,
+        student_first_name: student_first_name,
+        student_last_name: student_last_name,
+        read_only: "student_id, student_first_name, student_last_name,student_email, amount"
+      }, "#flywire-payex");
+
+  function handleChange(checkbox) {
+    if (checkbox.checked == true) {
+      document.getElementById("flywire-payex").innerHTML = "";
+      window.flywire.Payment.render({
+        // Set your environment
+        // demo, production
+        env: env,
+        // Set your preferred locale
+        // en, es-ES, zh-CN, ko, fr-FR, ja, pt-PT, ar, id
+        locale: locale,
+        // Set your institution unique Code
+        destination: portal_code,
+        theme: {
+          brandColor: "#3498db", // Any CSS color
+          chat: true, // true, false
+          footer: false, // true, false
+          skipCompletedSteps: true // true, false
+        },
+        provider: "embed",
+        amount: amount * 100,
+        student_email: student_email,
+        student_id: student_id,
+        student_first_name: student_first_name,
+        student_last_name: student_last_name,
+        read_only: "student_id, student_first_name, student_last_name,student_email, amount"
+      }, "#flywire-payex");
+    } else {
+      document.getElementById("flywire-payex").innerHTML = "";
+      window.flywire.Payment.render({
+        // Set your environment
+        // demo, production
+        env: env,
+        // Set your preferred locale
+        // en, es-ES, zh-CN, ko, fr-FR, ja, pt-PT, ar, id
+        locale: locale,
+        // Set your institution unique Code
+        destination: portal_code,
+        theme: {
+          brandColor: "#3498db", // Any CSS color
+          chat: true, // true, false
+          footer: false, // true, false
+          skipCompletedSteps: true // true, false
+        },
+        provider: "embed",
+        amount: amount * 100,
+        student_email: student_email,
+        student_id: student_id,
+        student_first_name: student_first_name,
+        student_last_name: student_last_name,
+        read_only: "student_id, student_first_name, student_last_name,student_email"
+      }, "#flywire-payex");
+    }
+  }
   </script>
   <script src="js/vendor/jquery-2.2.4.min.js"></script>
   <script src="js/popper.min.js"></script>
