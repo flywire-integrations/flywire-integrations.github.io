@@ -189,7 +189,6 @@
   if (typeof(payment_status) == "string") {
     document.getElementById("payment_status").innerHTML = payment_status;
   }
-  document.getElementById("newURL").href = "https://gateway.demo.flywire.com/v1/transfers?provider=" + portal_code + "&payment_destination=" + payment_destination + "&amount=" + amount * 100 + "&sender_email=" + sender_email + "&sender_first_name=" + sender_first_name + "&sender_last_name=" + sender_last_name + "&sender_address1=" + sender_address1 + "&sender_address2=" + sender_address2 + "&sender_state=" + sender_state + "&sender_city=" + sender_city + "&sender_zip=" + sender_zip_code + "&sender_phone=" + sender_phone + "&student_id=" + student_id + "&student_first_name=" + student_first_name + "&student_last_name=" + student_last_name + "&student_email=" + student_email;
   window.flywire.Payment.render({
     // Set your environment
     // demo, production
