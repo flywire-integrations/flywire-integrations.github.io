@@ -113,7 +113,7 @@
               </div>
             </div>
             <br>
-            <a href="https://gateway.demo.flywire.com/v1/transfers?provider=FCL&payment_destination=flywire-college&amount=250000&sender_email=johnsmith@flywire.com&sender_first_name=John&sender_last_name=Smith&sender_address1=Bugis%20Junction%20Towers&sender_address2=Victoria%20Street&sender_state=Singapore&sender_city=Singapore&sender_zip=123456&sender_phone=+6599001122&student_id=A123456700&student_first_name=John&student_last_name=Smith&student_email=johnsmith@flywire.com" target="_blank"><img src="img/make_payment_from_overseas_2x.png"></a>
+            <a id="newURL" href="" target="_blank"><img src="img/make_payment_from_overseas_2x.png"></a>
           </div>
           <br>
           <div class="title text-center">
@@ -179,6 +179,9 @@
   </footer>
   <!-- End footer Area -->
   <script src="js/flywire_parameters.js"></script>
+  <script type="text/javascript">
+  document.getElementById("newURL").href = "https://gateway.demo.flywire.com/v1/transfers?provider=" + portal_code + "&payment_destination=" + payment_destination + "&amount=" + amount + "&sender_email=" + sender_email + "&sender_first_name=" + sender_first_name + "&sender_last_name=" + sender_last_name + "&sender_address1=" + sender_address1 + "&sender_address2=" + sender_address2 + "&sender_state=" + sender_state + "&sender_city=" + sender_city + "&sender_zip=" + sender_zip_code + "&sender_phone=" + sender_phone + "&student_id=" + student_id + "&student_first_name=" + student_first_name + "&student_last_name=" + student_last_name + "&student_email=" + student_email;
+  </script>
   <script src="js/vendor/jquery-2.2.4.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/vendor/bootstrap.min.js"></script>
