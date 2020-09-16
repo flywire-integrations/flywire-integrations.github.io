@@ -36,33 +36,33 @@
     <div class="container main-menu">
       <div class="row align-items-center justify-content-between d-flex">
         <div id="logo">
-          <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+          <a href="index.html"><img src="img/flywire-logo-circle.jpg" height="30" width="30" alt="" title="" /> Flywire College</a>
         </div>
         <nav id="nav-menu-container">
           <ul class="nav-menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="price.html">Pricing</a></li>
-            <li class="menu-has-children"><a href="">Blog</a>
+            <li class="menu-has-children"><a href="">Application</a>
               <ul>
-                <li><a href="blog-home.html">Blog Home</a></li>
-                <li><a href="blog-single.html">Blog Single</a></li>
+                <li><a href="form_standalone.html">Standalone</a></li>
+                <li><a href="form_redirect.html">Redirect</a></li>
+                <li><a href="form_embed.html">Embed</a></li>
+                <li><a href="form_checkout.html">Checkout</a></li>
               </ul>
             </li>
-            <li class="menu-has-children"><a href="">Pages</a>
+            <li class="menu-has-children"><a href="">Invoices</a>
               <ul>
-                <li><a href="elements.html">Elements</a></li>
-                <li class="menu-has-children"><a href="">Level 2 </a>
-                  <ul>
-                    <li><a href="#">Item One</a></li>
-                    <li><a href="#">Item Two</a></li>
-                  </ul>
-                </li>
+                <li><a href="invoice_standalone.html">Standalone</a></li>
+                <li><a href="invoice_redirect.html">Redirect</a></li>
+                <li><a href="invoice_embed.html">Embed</a></li>
+                <li><a href="invoice_checkout.html">Checkout</a></li>
               </ul>
             </li>
-            <li><a href="contact.html">Contact</a></li>
+            <li class="menu-has-children"><a href="">Reconciliation</a>
+              <ul>
+                <li><a href="callbacks.html">Callbacks (Real-time)</a></li>
+                <li><a href="flywire_disbursement_file_sample.csv">Disbursement File (Daily)</a></li>
+              </ul>
+            </li>
           </ul>
         </nav><!-- #nav-menu-container -->
       </div>
@@ -75,9 +75,8 @@
       <div class="row d-flex align-items-center justify-content-center">
         <div class="about-content col-lg-12">
           <h1 class="text-white">
-            Elements
+            Course Application Form
           </h1>
-          <p class="text-white link-nav"><a href="index.html">Home </a> <span class="lnr lnr-arrow-right"></span> <a href="elements.html"> Elements</a></p>
         </div>
       </div>
     </div>
@@ -88,34 +87,48 @@
     <div class="container">
       <div class="section-top-border">
         <div class="row">
-          <div class="col-lg-8 col-md-8">
-            <h3 class="mb-30">Form Element</h3>
+          <div class="col-lg-3 col-md-3"></div>
+          <div class="col-lg-6 col-md-6">
             <form method="GET" class="register-form" id="register-form" action="thank_you_checkout.html">
-              <div class="mt-10">
-                <input type="text" name="first_name" id="first_name" placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required class="single-input">
+              <div class="form-row">
+                <div class="mt-10 col-lg-6 col-md-6">
+                  <label for="first_name">First Name</label>
+                  <input type="text" name="first_name" id="first_name" required class="single-input">
+                </div>
+                <div class="mt-10 col-lg-6 col-md-6">
+                  <label for="last_name">Last Name</label>
+                  <input type="text" name="last_name" id="last_name" required class="single-input">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="mt-10 col-lg-6 col-md-6">
+                  <label for="email">Email</label>
+                  <input type="text" name="email" id="email" required class="single-input">
+                </div>
+                <div class="mt-10 col-lg-6 col-md-6">
+                  <label for="telephone">Telephone</label>
+                  <input type="text" name="telephone" id="telephone" required class="single-input">
+                </div>
               </div>
               <div class="mt-10">
-                <input type="text" name="last_name" id="last_name" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required class="single-input">
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" required class="single-input">
               </div>
-              <div class="mt-10">
-                <input type="text" name="email" id="email" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required class="single-input">
-              </div>
-              <div class="mt-10">
-                <input type="text" name="telephone" id="telephone" placeholder="Telephone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Telephone Number'" required class="single-input">
-              </div>
-              <div class="mt-10">
-                <input type="text" name="address" id="address" placeholder="Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required class="single-input">
-              </div>
-              <div class="mt-10">
-                <input type="text" name="city" id="city" placeholder="City" onfocus="this.placeholder = ''" onblur="this.placeholder = 'City'" required class="single-input">
-              </div>
-              <div class="mt-10">
-                <input type="text" name="state" id="state" placeholder="State" onfocus="this.placeholder = ''" onblur="this.placeholder = 'State'" required class="single-input">
+              <div class="form-row">
+                <div class="mt-10 col-lg-6 col-md-6">
+                  <label for="city">City</label>
+                  <input type="text" name="city" id="city" required class="single-input">
+                </div>
+                <div class="mt-10 col-lg-6 col-md-6">
+                  <label for="state">State</label>
+                  <input type="text" name="state" id="state" required class="single-input">
+                </div>
               </div>
               <div class="input-group-icon mt-10">
-                <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                <label for="country">Country</label>
                 <div class="form-select" id="default-select1">
                   <select id="country" name="country">
+                    <option value=""></option>
                     <option value="Australia">Australia</option>
                     <option value="Brazil">Brazil</option>
                     <option value="Canada">Canada</option>
@@ -123,7 +136,7 @@
                     <option value="France">France</option>
                     <option value="Indonesia">Indonesia</option>
                     <option value="India">India</option>
-                    <option value="Korea South">South Korea</option>
+                    <option value="Korea South">Korea, South</option>
                     <option value="Malaysia">Malaysia</option>
                     <option value="Mexico">Mexico</option>
                     <option value="Nigeria">Nigeria</option>
@@ -136,38 +149,34 @@
                   </select>
                 </div>
               </div>
-              <div class="input-group-icon mt-10">
-                <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
-                <div class="form-select" id="default-select2">
-                  <select name="course" id="course" onchange="updateAmount(this.value); generatePaymentID();">
-                    <option value="computer">Computer Science</option>
-                    <option value="marketing">Digital Marketing</option>
-                    <option value="mba">MBA</option>
-                    <option value="product">Product Management</option>
-                    <option value="uiux">UI/UX</option>
-                  </select>
+              <div class="form-row">
+                <div class="input-group-icon mt-10 col-lg-6 col-md-6">
+                  <label for="course">Course</label>
+                  <div class="form-select" id="default-select2">
+                    <select name="course" id="course" onchange="updateAmount(this.value); generatePaymentID();">
+                      <option value=""></option>
+                      <option value="computer">Computer Science</option>
+                      <option value="marketing">Digital Marketing</option>
+                      <option value="mba">MBA</option>
+                      <option value="product">Product Management</option>
+                      <option value="uiux">UI/UX</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mt-10 col-lg-6 col-md-6">
+                  <label for="amount">Amount</label>
+                  <input type="text" name="amount" id="amount" required class="single-input-secondary">
                 </div>
               </div>
               <div class="form-group">
-                <label for="course">Course:</label>
-                <div class="form-select">
-                  <select name="course" id="course" onchange="updateAmount(this.value); generatePaymentID();">
-                    <option value=""></option>
-                    <option value="computer">Computer Science</option>
-                    <option value="marketing">Digital Marketing</option>
-                    <option value="mba">MBA</option>
-                    <option value="product">Product Management</option>
-                    <option value="uiux">UI/UX</option>
-                  </select>
-                  <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-                </div>
+                <input type="hidden" id="paymentID" name="paymentID">
               </div>
-              <div class="form-group">
-              <label for="amount">Amount ($):</label>
-              <input readonly type="number" name="amount" id="amount" required />
-            </div>
+              <div class="form-submit">
+                <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+              </div>
             </form>
           </div>
+          <div class="col-lg-3 col-md-3"></div>
         </div>
       </div>
     </div>

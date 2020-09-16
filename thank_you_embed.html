@@ -153,9 +153,12 @@
   <script src="js/flywire_parameters.js"></script>
   <script type="text/javascript">
   var urlParams = new URLSearchParams(window.location.search);
+  var amount = urlParams.get('amount');
+  amount = amount.replace('$', '');
+  amount = amount.replace(',', '');
   console.log('provider: ' + portal_code);
   console.log('payment_destination: ' + payment_destination);
-  console.log('amount: ' + urlParams.get('amount'));
+  console.log('amount: ' + amount);
   console.log('sender_email: ' + urlParams.get('email'));
   console.log('sender_first_name: ' + urlParams.get('first_name'));
   console.log('sender_last_name: ' + urlParams.get('last_name'));
@@ -185,7 +188,7 @@
       skipCompletedSteps: true // true, false
     },
     provider: "embed",
-    amount: urlParams.get('amount') * 100,
+    amount: amount * 100,
     sender_first_name: urlParams.get('first_name'),
     sender_last_name: urlParams.get('last_name'),
     sender_address1: urlParams.get('address'),

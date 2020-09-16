@@ -148,6 +148,10 @@
   <script src="js/flywire_parameters.js"></script>
   <script type="text/javascript">
   var urlParams = new URLSearchParams(window.location.search);
+  console.log('amount: ' + urlParams.get('amount'));
+  var amount = urlParams.get('amount');
+  amount = amount.replace('$', '');
+  amount = amount.replace(',', '');
   console.log('country: ' + urlParams.get('country'));
   var country = urlParams.get('country');
   country = country.replace('United States', 'US');
@@ -381,7 +385,7 @@
   console.log('country: ' + country);
   console.log('provider: ' + portal_code);
   console.log('payment_destination: ' + payment_destination);
-  console.log('amount: ' + urlParams.get('amount'));
+  console.log('amount: ' + amount);
   console.log('sender_email: ' + urlParams.get('email'));
   console.log('sender_first_name: ' + urlParams.get('first_name'));
   console.log('sender_last_name: ' + urlParams.get('last_name'));
@@ -410,7 +414,7 @@
 
     // Pre-populate fields with data (based on your portal settings)
 
-    amount: urlParams.get('amount') * 100,
+    amount: amount * 100,
     sender_country: country,
     sender_first_name: urlParams.get('first_name'),
     sender_last_name: urlParams.get('last_name'),
