@@ -1,3 +1,17 @@
+var urlParams = new URLSearchParams(window.location.search);
+var page = urlParams.get('page');
+console.log("page: " + page);
+
+if (page == "checkout") {
+  document.getElementById("register-form").action = "thank_you_checkout.html";
+} else if (page == "embed") {
+  document.getElementById("register-form").action = "thank_you_embed.html";
+} else if (page == "redirect") {
+  document.getElementById("register-form").action = "thank_you_redirect.html";
+} else if (page == "standalone") {
+  document.getElementById("register-form").action = "thank_you_standalone.html";
+}
+
 function updateAmount(element) {
   if (element == "computer") {
     document.getElementById("amount").value = "$1,000";
