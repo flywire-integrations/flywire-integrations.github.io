@@ -29,3 +29,16 @@ function updateAmount(element) {
 function generatePaymentID() {
   document.getElementById("paymentID").value = "FC-" + Math.floor((Math.random() * 100000) + 1);
 }
+
+function handleChange(checkbox) {
+  if (checkbox.checked == true) {
+    document.getElementById("first_name").value = student_first_name;
+    document.getElementById("last_name").value = student_last_name;
+    document.getElementById("email").value = student_email;
+    document.getElementById("telephone").value = sender_phone;
+    document.getElementById("address").value = sender_address1;
+    document.getElementById("city").value = "Fly City";
+    document.getElementById("state").value = "Fly State";
+    
+  }
+}
