@@ -22,6 +22,8 @@ student_email = "johnsmith@flywire.com";
 student_id = "A123456700";
 student_first_name = "John";
 student_last_name = "Smith";
+student_full_name = "John Smith";
+student_name = "John Smith";
 invoice_no = "FC-10005001";
 payment_for = "Winter 2020 tuition";
 

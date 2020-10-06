@@ -2,14 +2,37 @@ var urlParams = new URLSearchParams(window.location.search);
 var page = urlParams.get('page');
 console.log("page: " + page);
 
-if (page == "checkout") {
-  document.getElementById("register-form").action = "thank_you_checkout.html";
-} else if (page == "embed") {
-  document.getElementById("register-form").action = "thank_you_embed.html";
+if (page == "embed") {
+  document.getElementById("register_form").action = "thank_you_embed.html";
+  if (urlParams.get('portal-code')) {
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'portal-code';
+    input.value = urlParams.get('portal-code');
+    document.getElementsByName("register_form")[0].appendChild(input);
+  }
 } else if (page == "redirect") {
-  document.getElementById("register-form").action = "thank_you_redirect.html";
+  document.getElementById("register_form").action = "thank_you_redirect.html";
+  document.getElementById("newsletter_input").name = "payment-destination";
+  document.getElementById("newsletter_input").placeholder = "Enter Subdomain Name";
+  if (urlParams.get('payment-destination')) {
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'payment-destination'
+    input.value = urlParams.get('payment-destination');
+    document.getElementsByName("register_form")[0].appendChild(input);
+  }
 } else if (page == "standalone") {
-  document.getElementById("register-form").action = "thank_you_standalone.html";
+  document.getElementById("register_form").action = "thank_you_standalone.html";
+  document.getElementById("newsletter_input").name = "payment-destination";
+  document.getElementById("newsletter_input").placeholder = "Enter Subdomain Name";
+  if (urlParams.get('payment-destination')) {
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'payment-destination'
+    input.value = urlParams.get('payment-destination');
+    document.getElementsByName("register_form")[0].appendChild(input);
+  }
 }
 
 function updateAmount(element) {
@@ -39,6 +62,6 @@ function handleChange(checkbox) {
     document.getElementById("address").value = sender_address1;
     document.getElementById("city").value = "Fly City";
     document.getElementById("state").value = "Fly State";
-    
+
   }
 }
