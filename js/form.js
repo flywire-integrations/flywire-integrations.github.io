@@ -2,7 +2,10 @@ var urlParams = new URLSearchParams(window.location.search);
 var page = urlParams.get('page');
 console.log("page: " + page);
 
-if (page == "embed") {
+if (page == "checkout") {
+  document.getElementById("register_form").action = "thank_you_checkout.html";
+  document.getElementById("newsletter_input").placeholder = "Feature not available for Checkout";
+} else if (page == "embed") {
   document.getElementById("register_form").action = "thank_you_embed.html";
   if (urlParams.get('portal-code')) {
     var input = document.createElement('input');
@@ -14,7 +17,7 @@ if (page == "embed") {
 } else if (page == "redirect") {
   document.getElementById("register_form").action = "thank_you_redirect.html";
   document.getElementById("newsletter_input").name = "payment-destination";
-  document.getElementById("newsletter_input").placeholder = "Enter Subdomain Name";
+  document.getElementById("newsletter_input").placeholder = "Enter Demo Subdomain Name";
   if (urlParams.get('payment-destination')) {
     var input = document.createElement('input');
     input.type = 'hidden';
@@ -25,7 +28,7 @@ if (page == "embed") {
 } else if (page == "standalone") {
   document.getElementById("register_form").action = "thank_you_standalone.html";
   document.getElementById("newsletter_input").name = "payment-destination";
-  document.getElementById("newsletter_input").placeholder = "Enter Subdomain Name";
+  document.getElementById("newsletter_input").placeholder = "Enter Demo Subdomain Name";
   if (urlParams.get('payment-destination')) {
     var input = document.createElement('input');
     input.type = 'hidden';
